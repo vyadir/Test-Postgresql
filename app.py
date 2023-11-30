@@ -2,9 +2,8 @@
 import os
 import psycopg2
 from dotenv import load_dotenv
-import pandas as pd
 
-# Define la clase DatabaseManager
+# Define la clase DatabaseManager para gestionar conexiones y operaciones con la base de datos
 class DatabaseManager:
     # Método constructor de la clase
     def __init__(self):
@@ -77,14 +76,14 @@ class DatabaseManager:
             # Solicita al usuario elegir una opción
             choice = input("Elige una opción: ")
             if choice == '1':
-                # Solicita al usuario ingresar una consulta SELECT
+                # consulta SELECT a realizar
                 query = "SELECT * FROM PADRON"
                 # Llama al método fetch_data para ejecutar la consulta y obtener los resultados
                 results = self.fetch_data(query)
                 # Imprime cada fila de los resultados
                 for row in results:
                     print(row)
-            # Opción 5: Salir
+            # Opción 2: Salir
             elif choice == '2':
                 # Imprime un mensaje y rompe el ciclo para salir del programa
                 print("Saliendo del programa.")
